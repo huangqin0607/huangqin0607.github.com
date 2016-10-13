@@ -129,14 +129,14 @@ div.header .call a.botton {
 .main img{
     background-size: 100%;
     display: block;
-    width: 1260px;
-    height: 630px;
+    width: 100%;
+    height:640px;
 }
 .img img{
     background-size: 100%;
     display: block;
-    width: 1260px;
-    height: 630px;
+    width: 100%;
+    height: 640px;
 }
 .main .shade{
     width: 800px;
@@ -220,6 +220,7 @@ div.header .call a.botton {
     display: none;
 
 }
+list_text£ºhover .list_two{display:block}
 .main .skill ul.list_one li.list_text:hover ul.list_text{
      display: block;
  }
