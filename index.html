@@ -1,15 +1,187 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>一片天</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <link rel="stylesheet" href="stylesheets/jquery.fullPage.css">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/bace.css">
+    <style>
+        * { margin: 0; padding: 0; border: 0; }
+        html,body{
+            margin: 0;
+        }
+        @-webkit-keyframes STAR-MOVE {
+            from {
+                background-position:0% 0%
+            }
+            to {
+                background-position: 600% 0%
+            }
+        }
+        @keyframes STAR-MOVE {
+            from {
+                background-position: 0% 0%
+            }
+            to {
+                background-position: 600% 0%
+            }
+        }
+        .wall{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        div#background {
+            background: black url('img/couds/background.png') repeat-x 5% 0%;
+            background-size: cover;
+            -webkit-animation: STAR-MOVE 200s linear infinite;
+            -moz-animation: STAR-MOVE 200s linear infinite;
+            -ms-animation: STAR-MOVE 200s linear infinite;
+            animation: STAR-MOVE 200s linear infinite;
+        }
+        div#midground{
+            background:url('img/couds/midground.png')repeat 20% 0%;
+            z-index: 1;
+            -webkit-animation: STAR-MOVE  100s linear infinite;
+            -moz-animation: STAR-MOVE  100s linear infinite;
+            -ms-animation: STAR-MOVE  100s linear infinite;
+            animation: STAR-MOVE  100s linear infinite;
+        }
+        div#foreground{
+            background:url('img/couds/foreground.png')repeat 35% 0%;
+            z-index: 2;
+            -webkit-animation: STAR-MOVE  50s linear infinite;
+            -moz-animation: STAR-MOVE  50s linear infinite;
+            -ms-animation: STAR-MOVE  50s linear infinite;
+            animation: STAR-MOVE  50s linear infinite;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/move.js"></script>
+    <script>
+        window.onload=function(){
+            var oText=document.getElementById('head_text');
+            var str='       Hey !!! 怎么才来，等你好久了。           这里有一位正在跳坑的web前端工程师。';
+            for(var i=0;i<str.length;i++){
+                var oP=document.createElement('p');
+                oP.innerHTML=str.charAt(i);
+                oText.appendChild(oP);
+            }
+            var aP=document.getElementsByTagName('p');
+            var i=0;
+            var timer=null;
+            timer=setInterval(function(){
+                move(aP[i],{opacity:1});
+                i++
+                if(i==str.length){
+                    clearInterval(timer);
+                }
+            },100)
 
-  </body>
+        };
+    </script>
+</head>
+<body>
+<!-- 音频播放 -->
+<audio src="Music/午后阳光.mp3" controls="controls" loop="loop" autoplay="autoplay">
+    亲 您的浏览器不支持html5的audio标签
+</audio>
+<!-- 头部固定导航 -->
+ <div class="rightsidebar" id="header">
+        <ul class="clearfix">
+            <li><a href="zidong.html#page1">home</a> </li>
+            <li><a href="zidong.html#page3">作品</a></li>
+            <li><a href="zidong.html#page4">about</a></li>
+        </ul>
+ </div>
+
+<div class="fullpage">
+    <!-- 第一页 -->
+    <div class="section activ">
+        <div class="header">
+            <div id="background" class="wall"></div>
+            <div id="midground" class="wall"></div>
+            <div id="foreground" class="wall"></div>
+            <div class="container">
+                <div class="line"></div>
+                <div class="ball">
+                    <img src="img/h.jpg" />
+                </div>
+            </div>
+            <div class="head-text" id="head_text">
+            </div>
+
+            <div class="call">
+                <a href="zidong.html#page4" class="botton">联系她</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- 第二页 -->
+    <div class="section" style="background:#aaa">
+        <div class="main">
+            <img src="img/tu1.jpg" />
+            <div class="shade">
+            </div>
+            <div class="skill">
+                <h2>主要技能</h2>
+                <ul class="list_one">
+                    <li class="list_text">
+                        <h4>JavaScript</h4>
+                        <ul class="list_tow">
+                            <li>• 精通原生Javascript，能脱离jQuery等类库编码；</li>
+                            <li>• 能运用模块化、面向对象的方式编程；</li>
+                            <li>• 熟悉正则表达式的使用；</li>
+                            <li>• 编写过功能全面的Javascript基础类库。</li>
+                        </ul>
+                    </li>
+                    <li class="list_text">
+                        <h4>HTML & CSS</h4>
+                    </li>
+                    <li class="list_text">
+                        <h4>JQuery</h4>
+                    </li>
+                    <li class="list_text">
+                        <h4>Ajax/Jsonp</h4>
+                    </li>
+                    <li class="list_text">
+                        <h4>HTML5 & CSS3</h4>
+                    </li>
+                    <li class="list_text">
+                        <h4>Photoshop</h4>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 第三页 -->
+    <div class="section"  style="background:#ccc">第三屏</div>
+    <!-- 第四页 -->
+    <div class="section"  style="background:#666">第四屏</div>
+
+</div>
+</body>
+<script>
+    $(document).ready(function() {
+        $('.fullpage').fullpage({
+            slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+            anchors: ['page1', 'page2', 'page3', 'page4'],
+            scrollingSpeed:400,
+            css3:true,
+            loopBottom:true,
+            scrollBar:true,
+            fixedElements:'#header',
+            navigation:true,
+            navigationPosition:'right',
+            navigationTooltips:['page1', 'page2', 'page3', 'page4']
+        });
+    });
+</script>
 </html>
