@@ -132,6 +132,12 @@ div.header .call a.botton {
     width: 1260px;
     height: 630px;
 }
+.img img{
+    background-size: 100%;
+    display: block;
+    width: 1260px;
+    height: 630px;
+}
 .main .shade{
     width: 800px;
     height: 430px;
