@@ -62,7 +62,9 @@
         }
         .fp-tableCell{
             background: url("img/sky5.jpg") center  no-repeat;
-
+        }
+        .main{
+            background: url("img/tu1.jpg") center  no-repeat;
         }
     </style>
     <script src="js/jquery.js"></script>
@@ -98,7 +100,7 @@
 </head>
 <body>
 <!-- 音频播放 -->
-<audio src="Music/午后阳光.mp3" controls="controls" loop="loop" autoplay="autoplay">
+<audio src="Music/午后阳光." controls="controls" loop="loop" autoplay="autoplay">
     亲 您的浏览器不支持html5的audio标签
 </audio>
 <!-- 头部固定导航 -->
@@ -132,7 +134,7 @@
     <!-- 第二页 -->
     <div class="section" >
         <div class="main">
-            <img src="img/tu1.jpg" />
+           <!-- <img src="img/tu1.jpg" /> -->
             <div class="shade">
             </div>
             <div class="skill">
@@ -214,6 +216,12 @@
                             <p></p>
                         </li>
                     </ul>
+                    <ul>
+                        <li><p>★★★</p></li>
+                        <li><p>❤❤❤</p></li>
+                        <li><p>☀☀☀</p></li>
+                        <li><p>☁☁☁</p></li>
+                    </ul>
                 </div>
                 <div class="line_stroy">
                     <ul>
@@ -281,12 +289,32 @@
                         $(".timeline").animate({
                             height:'500px'
                         },2000);
-                        move('.timeline_title').duration('4s').rotate(360).end(function(){
+                       /* move('.timeline_title').duration('2s').rotate(360).end(function(){
                             move('.line_stroy li:nth-child(1)').rotate(360).end(function(){
                                 move('.line_stroy li:nth-child(2)').rotate(360).end(function(){
                                     move('.line_stroy li:nth-child(3)').rotate(360).end(function(){
                                         move('.line_stroy li:nth-child(4)').rotate(360).end(function(){
                                             move('.line_stroy li:nth-child(5)').rotate(360).end();
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                        */
+                        move('.timeline_title').duration('2s').rotate(360).end(function(){
+                            move('.line_stroy li:nth-child(1)').rotate(360).end(function(){
+                                move('.line ul:nth-child(2) li:nth-child(1)').rotate(360).end(function(){
+                                    move('.line_stroy li:nth-child(2)').rotate(360).end(function(){
+                                        move('.line ul:nth-child(2) li:nth-child(2)').rotate(360).end(function(){
+                                            move('.line_stroy li:nth-child(3)').rotate(360).end(function(){
+                                                move('.line ul:nth-child(2) li:nth-child(3)').rotate(360).end(function(){
+                                                    move('.line_stroy li:nth-child(4)').rotate(360).end(function(){
+                                                        move('.line ul:nth-child(2) li:nth-child(4)').rotate(360).end(function(){
+                                                            move('.line_stroy li:nth-child(5)').rotate(360).end();
+                                                        });
+                                                    });
+                                                });
+                                            });
                                         });
                                     });
                                 });
@@ -315,12 +343,12 @@
                         /*$(".timeline").animate({
                             height:'-500px'
                         },2000);*/
-                        move('.timeline_title').rotate(-360).end(function(){
-                            move('.line_stroy li:nth-child(5)').rotate(-360).end(function(){
-                                move('.line_stroy li:nth-child(4)').rotate(-360).end(function(){
-                                    move('.line_stroy li:nth-child(3)').rotate(-360).end(function(){
-                                        move('.line_stroy li:nth-child(2)').rotate(-360).end(function(){
-                                            move('.line_stroy li:nth-child(1)').rotate(-360).end();
+                            move('.line_stroy li:nth-child(5)').rotate(0).end(function(){
+                                move('.line_stroy li:nth-child(4)').rotate(0).end(function(){
+                                    move('.line_stroy li:nth-child(3)').rotate(0).end(function(){
+                                        move('.line_stroy li:nth-child(2)').rotate(0).end(function(){
+                                            move('.line_stroy li:nth-child(1)').rotate(0).end(function(){
+                                                move('.timeline_title').rotate(0).end();
                                         });
                                     });
                                 });
