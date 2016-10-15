@@ -387,10 +387,11 @@ ul.list_tow{
 .line_stroy ul li:nth-child(3) p:nth-child(1){
     border: 1px solid #000000;
     width: 290px;
-    height: 61px;
+    height: 47px;
     margin: 5px 12px;
     text-align: center;
     line-height: 20px;
+    padding-top: 4px;
 }
 .line_stroy ul li:nth-child(5) p:nth-child(1){
     border: 1px solid #000000;
@@ -403,7 +404,7 @@ ul.list_tow{
 }
 .line_stroy ul li:nth-child(2){
     width: 316px;
-    height: 80px;
+    height: 100px;
     position: absolute;
     right: 175px;
     top: 145px;
@@ -418,15 +419,17 @@ ul.list_tow{
     top: 245px;
     border-color: #08a7ff;
     width: 326px;
-    height: 70px;
+    height: 64px;
+    margin-top: 5px;
+
 }
 .line_stroy ul li:nth-child(4){
     position: absolute;
     right: 166px;
-    top: 310px;
+    top: 327px;
     border-color: #c4c6c1;
     width:326px;
-    height: 120px;
+    height: 81px;
     text-indent:2em;
     padding: 5px;
     color: #ffffff;
@@ -484,7 +487,7 @@ ul.list_tow{
     border: 1px solid #000000;
     position: absolute;
     left: 26px;
-    top: 190px;
+    top: 205px;
 }
 .line ul:nth-child(2) li:nth-child(4){
     width: 112px;
