@@ -66,37 +66,16 @@
         .main{
             background: url("img/tu1.jpg") center  no-repeat;
         }
+        #fot{
+            background: url("img/sky4.jpg") center  no-repeat;
+        }
     </style>
     <script src="js/jquery.js"></script>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
-    <script src="js/move1.js"></script>
-    <script>
-        window.onload=function(){
-            var oText=document.getElementById('head_text');
-            var oBall=document.getElementById('ball');
-            // 首页打字效果
-            var str='       Hey !!! 怎么才来，等你好久了。           这里有一位正在跳坑的web前端工程师。';
-            for(var i=0;i<str.length;i++){
-                var oP=document.createElement('p');
-                oP.innerHTML=str.charAt(i);
-                oText.appendChild(oP);
-            }
-            var aP=document.getElementsByTagName('p');
-            var i=0;
-            var timer=null;
-            timer=setInterval(function(){
-                move1(aP[i],{opacity:1});
-                i++
-                if(i==str.length){
-                    clearInterval(timer);
-                }
-            },100)
-
-
-        };
-    </script>
+    <script src="js/movedan.js"></script>
+    <script src="js/screen.js"></script>
 </head>
 <body>
 <!-- 音频播放 -->
@@ -105,6 +84,7 @@
 </audio>
 <!-- 头部固定导航 -->
  <div class="rightsidebar" id="header">
+       <p class="head_img"><img src="img/h.jpg"></p>
         <ul class="clearfix">
             <li><a href="index.html#主页">home</a> </li>
             <li><a href="javascript:;"></a></li>
@@ -122,7 +102,9 @@
                 <div class="ball">
                     <img src="img/h.jpg" />
                 </div>
-            <div class="head-text" id="head_text">
+            <div class="head-text" >
+                  <span class="hey">&nbsp;&nbsp;&nbsp;Hey !!!  怎 么 才 来，等 你 好 久 了。</span>
+                  <span class="hey"> 这 里 有 一 位 正 在 跳 坑 的 web 前 端 工 程 师。</span>
             </div>
 
             <div class="call">
@@ -133,7 +115,8 @@
     </div>
     <!-- 第二页 -->
     <div class="section" >
-        <div class="main">
+        <div id="play_screen"></div>
+        <div class="main" >
            <!-- <img src="img/tu1.jpg" /> -->
             <div class="shade">
             </div>
@@ -251,8 +234,20 @@
     <!-- 第四页 -->
     <div class="section"  >
         <div class="img">
-            <img src="img/sky4.jpg">
+           <img src="img/k.jpg">
         </div>
+        <div class="referral">
+            <img src="img/resume.png">
+        </div>
+        <div class="bot_list">
+            <ul>
+                <li>黄 琴</li>
+                <li>22岁</li>
+                <li><img src="img/1.jpg"> </li>
+                <li><a href="javascript:;">下载简历</a> </li>
+            </ul>
+        </div>
+
     </div>
 
 </div>
@@ -260,9 +255,9 @@
 </body>
 <script>
     $(document).ready(function() {
-       /* $(".timeline").eq(0).animate({
-            height:'500px'
-        },5000);*/
+        $(".head-text").animate({
+            top:'50%'
+        },2000);
         $('.fullpage').fullpage({
             slidesColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
             anchors: ['主页', '个人技能', '工作经历', '简历'],
@@ -278,9 +273,11 @@
             afterLoad:function(link,index){
                 switch(index){
                     case  1:
-                      /*  move('.ball').scale(2).end();*/
+                       // move('.head-text').set('margin-top', '5%').end();
+                        $('.head_img').css('display','none');
                         break;
                     case  2:
+                        $('.head_img').css('display','block');
                         move('.skill h2').set('margin-right','105%').end();
                         move('.list_one').set('margin-left','40%').end();
                         move('.shade').rotate(360).end();
@@ -289,18 +286,6 @@
                         $(".timeline").animate({
                             height:'500px'
                         },2000);
-                       /* move('.timeline_title').duration('2s').rotate(360).end(function(){
-                            move('.line_stroy li:nth-child(1)').rotate(360).end(function(){
-                                move('.line_stroy li:nth-child(2)').rotate(360).end(function(){
-                                    move('.line_stroy li:nth-child(3)').rotate(360).end(function(){
-                                        move('.line_stroy li:nth-child(4)').rotate(360).end(function(){
-                                            move('.line_stroy li:nth-child(5)').rotate(360).end();
-                                        });
-                                    });
-                                });
-                            });
-                        });
-                        */
                         move('.timeline_title').duration('2s').rotate(360).end(function(){
                             move('.line_stroy li:nth-child(1)').rotate(360).end(function(){
                                 move('.line ul:nth-child(2) li:nth-child(1)').rotate(360).end(function(){
@@ -323,7 +308,20 @@
                       /* move('.timeline_title').set('height', '500px').end()*/
                         break;
                     case  4:
-                        /*move('.section h1').scale(1.5).end();*/
+                        move('.referral img').set('margin-left','80%').end();
+                        move('.bot_list ul li:nth-child(1)').x(400).end();
+                        move('.bot_list ul li:nth-child(2)').ease('in').x(400).end();
+                        move('.bot_list ul li:nth-child(3)').ease('out').x(400).end();
+                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(400).end();
+                      //  move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
+                      //  move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
+                        setTimeout(function(){
+                            move('.bot_list ul li:nth-child(1)').x(0).end();
+                            move('.bot_list ul li:nth-child(2)').x(0).end();
+                            move('.bot_list ul li:nth-child(3)').x(0).end();
+                            move('.bot_list ul li:nth-child(4)').x(0).end();
+                         //   move('.bot_list ul li:nth-child(5)').x(0).end();
+                        }, 1200);
                         break;
                     default:
                         break;
@@ -332,9 +330,10 @@
             onLeave:function(link,index){
                 switch(index){
                     case  1:
-                       /* move('.ball').scale(0).end();*/
+                       // move('.head-text').set('margin-top', '-5%').end();
                         break;
                     case  2:
+                       // $(".head_img").css(display,'block');
                         move('.skill h2').set('margin-right','-105%').end();
                         move('.list_one').set('margin-left','-40%').end();
                         move('.shade').rotate(-360).end();
@@ -356,7 +355,20 @@
                         });
                         break;
                     case  4:
-
+                        move('.referral img').set('margin-left','-80%').end();
+                        move('.bot_list ul li:nth-child(1)').x(0).end();
+                        move('.bot_list ul li:nth-child(2)').ease('in').x(0).end();
+                        move('.bot_list ul li:nth-child(3)').ease('out').x(0).end();
+                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(0).end();
+                        //  move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
+                        //  move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
+                        setTimeout(function(){
+                            move('.bot_list ul li:nth-child(1)').x(0).end();
+                            move('.bot_list ul li:nth-child(2)').x(0).end();
+                            move('.bot_list ul li:nth-child(3)').x(0).end();
+                            move('.bot_list ul li:nth-child(4)').x(0).end();
+                            //   move('.bot_list ul li:nth-child(5)').x(0).end();
+                        }, 1200);
                         break;
                     default:
                         break;
@@ -376,6 +388,20 @@
 
                         break;
                     case  4:
+                        move('.referral img').set('margin-left','-80%').end();
+                        move('.bot_list ul li:nth-child(1)').x(0).end();
+                        move('.bot_list ul li:nth-child(2)').ease('in').x(0).end();
+                        move('.bot_list ul li:nth-child(3)').ease('out').x(0).end();
+                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(0).end();
+                        //  move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
+                        //  move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
+                        setTimeout(function(){
+                            move('.bot_list ul li:nth-child(1)').x(0).end();
+                            move('.bot_list ul li:nth-child(2)').x(0).end();
+                            move('.bot_list ul li:nth-child(3)').x(0).end();
+                            move('.bot_list ul li:nth-child(4)').x(0).end();
+                            //   move('.bot_list ul li:nth-child(5)').x(0).end();
+                        }, 1200);
 
                         break;
                     default:
