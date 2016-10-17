@@ -303,14 +303,14 @@
                         move('.bot_list ul li:nth-child(1)').x(400).end();
                         move('.bot_list ul li:nth-child(2)').ease('in').x(400).end();
                         move('.bot_list ul li:nth-child(3)').ease('out').x(400).end();
-                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(400).end();
+                        //move('.bot_list ul li:nth-child(4)').ease('in-out').x(400).end();
                        // move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
                         //  move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
                         setTimeout(function () {
                             move('.bot_list ul li:nth-child(1)').x(0).end();
                             move('.bot_list ul li:nth-child(2)').x(0).end();
                             move('.bot_list ul li:nth-child(3)').x(0).end();
-                            move('.bot_list ul li:nth-child(4)').x(0).end();
+                            //move('.bot_list ul li:nth-child(4)').x(0).end();
                            // move('.bot_list ul li:nth-child(5)').x(0).end();
                         }, 1200);
                         break;
@@ -350,50 +350,16 @@
                         move('.bot_list ul li:nth-child(1)').x(0).end();
                         move('.bot_list ul li:nth-child(2)').ease('in').x(0).end();
                         move('.bot_list ul li:nth-child(3)').ease('out').x(0).end();
-                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(0).end();
+                        //move('.bot_list ul li:nth-child(4)').ease('in-out').x(0).end();
                         //  move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
                        // move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
                         setTimeout(function () {
                             move('.bot_list ul li:nth-child(1)').x(0).end();
                             move('.bot_list ul li:nth-child(2)').x(0).end();
                             move('.bot_list ul li:nth-child(3)').x(0).end();
-                            move('.bot_list ul li:nth-child(4)').x(0).end();
+                            //move('.bot_list ul li:nth-child(4)').x(0).end();
                           //  move('.bot_list ul li:nth-child(5)').x(0).end();
                         }, 1200);
-                        break;
-                    default:
-                        break;
-                }
-            },
-            afterRender: function (link, index) {
-                switch (index) {
-                    case  1:
-                        /*move('.ball').scale(2).end();*/
-                        break;
-                    case  2:
-                        move('.skill h2')
-                                .translate(300, 80)
-                                .end()
-                        break;
-                    case  3:
-
-                        break;
-                    case  4:
-                        move('.referral img').set('margin-left', '-80%').end();
-                        move('.bot_list ul li:nth-child(1)').x(0).end();
-                        move('.bot_list ul li:nth-child(2)').ease('in').x(0).end();
-                        move('.bot_list ul li:nth-child(3)').ease('out').x(0).end();
-                        move('.bot_list ul li:nth-child(4)').ease('in-out').x(0).end();
-                        //  move('.bot_list ul li:nth-child(5)').ease('snap').x(400).end();
-                        //  move('.bot_list ul li:nth-child(5)').ease('cubic-bezier(0,1,1,0)').x(400).end();
-                        setTimeout(function () {
-                            move('.bot_list ul li:nth-child(1)').x(0).end();
-                            move('.bot_list ul li:nth-child(2)').x(0).end();
-                            move('.bot_list ul li:nth-child(3)').x(0).end();
-                            move('.bot_list ul li:nth-child(4)').x(0).end();
-                            //   move('.bot_list ul li:nth-child(5)').x(0).end();
-                        }, 1200);
-
                         break;
                     default:
                         break;
